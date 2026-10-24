@@ -1,0 +1,34 @@
+#include<stdio.h>
+int main(){
+	
+	int prices[100];//store the stocok price for each day 
+	int pricesSize;//tells how many days r there 
+	int minprice;//remembers lowest price 
+	int maxprofit=0;//remember the best profit 
+	int profit;
+	
+	printf("stocks for how many days : ");
+	scanf("%d",&pricesSize);
+	
+	printf("enter the price of stocks: ");
+	for(int i=0;i<pricesSize;i++){
+	    scanf("%d",&prices[i]);
+	    }// this loop only reads the prices 
+	minprice=prices[0];//intialize minprice with the first stock price 
+	 	   	
+    for(int i=1;i<pricesSize;i++){
+	
+	    if (minprice>prices[i]){
+	minprice=prices[i];
+		}
+		profit=prices[i]-minprice;
+		
+	    if(profit>maxprofit){
+			maxprofit=profit;
+		}
+	}
+		
+	printf("your maxprofit is %d",maxprofit);
+
+	
+}
